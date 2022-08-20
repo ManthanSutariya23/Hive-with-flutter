@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/src/constant/const.dart';
 import 'package:flutter_application_1/src/screen/home/home.dart';
+import 'package:flutter_application_1/src/utils/boxs.dart';
 import 'package:flutter_application_1/src/utils/transection.dart';
 import 'package:hive_flutter/adapters.dart';
 
+
 Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
+
   await Hive.initFlutter();
   Hive.registerAdapter(TransectionAdapter());
-
-  await Hive.openBox<TransectionAdapter>('transection');
+  Boxes.box = await Hive.openBox(boxName);
 
   runApp(const MyApp());
 }
