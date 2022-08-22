@@ -124,6 +124,14 @@ class _HomeState extends State<Home> {
             ),
           ),
           SizedBox(height: 24),
+
+          Text('Long press to delete record',
+            style: TextStyle(
+              fontSize: 11,
+              color: Colors.grey.shade400
+            ),
+          ),
+
           Expanded(
             child: ListView.builder(
               padding: EdgeInsets.all(8),
